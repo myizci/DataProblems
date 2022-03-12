@@ -23,7 +23,7 @@ public class MyQueue<T> {
     public T peek() {return (T) front.getValue();}
 
     public T dequeue() {
-        Node frontNode;
+        Node<T> frontNode;
         if(isEmpty()) throw new NoSuchElementException();
         if(front==back) {
             frontNode=front;
@@ -37,14 +37,7 @@ public class MyQueue<T> {
         return (T) frontNode.getValue();
     }
 
-    private Node getPrevious(Node node) {
-        Node<T> current=bottom;
-        while(current!=null){
-            if(current.getNext()==node) return current;
-            current=current.getNext();
-        }
-        return null;
-    }
+
 
     public int size() {return size;}
 
