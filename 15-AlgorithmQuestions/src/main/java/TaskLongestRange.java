@@ -16,10 +16,10 @@ public class TaskLongestRange {
 
         for (int num: array) {
 
-            numsVisited.put(num, false);
+            numsVisited.put(num, false); // O(n) x O(1) = O(n)
         }
 
-        for (int num:array) {
+        for (int num:array) { //O(n)
             if(numsVisited.get(num)) continue;
 
             numsVisited.put(num, true);
