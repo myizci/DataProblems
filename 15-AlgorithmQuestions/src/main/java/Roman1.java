@@ -48,40 +48,30 @@ public class Roman1 {
     }
 
     public static int romanToNumber2(String str) {
-
         char[] nums = str.toCharArray();
         int sum = 0;
         Node head = new Node(converter(nums[0]));
-
         Node current = head;
-
         for (int i = 1; i < str.length(); i++) {
             current.next = new Node(converter(nums[i]));
             current = current.next;
         } // creates a linked list
-
         while (head != null) { // head is iterating
 
             if (head.next != null && (head.next.value > head.value)) {
                 sum += head.next.value - head.value;
                 head = head.next.next;
             } else {
-
                 sum += head.value;
                 head = head.next;
             }
-
-            System.out.println(sum);
-
         }
-
         return sum;
     }
 
     class MyNode {
         int value;
         Node next;
-
         public MyNode(int value, Node next) {
             this.value = value;
             this.next = next;
@@ -93,22 +83,10 @@ public class Roman1 {
         switch (c) {
             case 'I':
                 return 1;
-//            case "II":
-//                return 2;
-//            case "III":
-//                return 3;
-//            case "IV":
-//                return 4;
+
             case 'V':
                 return 5;
-//            case "VI":
-//                return 6;
-//            case "VII":
-//                return 7;
-//            case "VIII":
-//                return 8;
-//            case "IX":
-//                return 9;
+
             case 'X':
                 return 10;
             case 'L':

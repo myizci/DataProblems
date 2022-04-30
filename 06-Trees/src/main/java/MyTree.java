@@ -114,10 +114,10 @@ public class MyTree {
     // task-3 , print all leaves
     public void printLeaves(Node root) {
         if (root == null) return;
-
         if (isLeaf(root)) System.out.print(root.value + ", ");
         printLeaves(root.leftChild);
         printLeaves(root.rightChild);
+
     }
     // task-4 , count all leaves
 
@@ -129,6 +129,13 @@ public class MyTree {
         return countLeaves(root.leftChild)+countLeaves(root.rightChild);
     }
 
+    public int countNodes(Node root) {
+        if (root == null) return 0;
+
+        if (isLeaf(root)) return 1;
+
+        return countNodes(root.leftChild)+countNodes(root.rightChild);
+    }
 
     // task-5 sum of all leaves
 
