@@ -99,14 +99,19 @@ public class MySinglyLinkedList {
     }
     // Assignment 4 Reverse the Nodes of Singly Linked List in one pass
     public void reverse() {
+        // 1->10
         if (isEmpty()) return;
-        Node previous = head;
-        Node current = head.next;
+        Node previous = head; //1
+        Node current = head.next; //2
         while (current != null) {
-            Node nextNode = current.next;
-            current.next = previous;
+            Node nextNode = current.next; // nextNode =3
+            current.next = previous; //
             previous = current;
             current = nextNode;
+            /*
+            12345
+
+             */
         }
         tail = head;
         tail.next = null;
